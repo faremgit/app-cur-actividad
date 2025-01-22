@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejador de actividades</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Actividades</h1>
+            <button class="fab" id="toggleForm" aria-label="Crear nuevo evento">
+                <span class="fab-icon">+</span>
+                <span class="fab-text">Nueva Actividad</span>
+            </button>
+        </header>
+
+        <div class="form-container hidden" id="formContainer">
+            <form id="eventForm">
+                <h2>Crear nueva actividad</h2>
+                <div class="form-group">
+                    <label for="title">Nombre de la actividad</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha</label>
+                    <input type="datetime-local" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Lugar</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea id="description" rows="4" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Guardar actividad</button>
+                    <button type="button" class="btn secondary" id="cancelBtn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="controls-container">
+            <div class="search-bar">
+                <input type="text" 
+                       id="searchInput" 
+                       placeholder="Buscar actividad..."
+                       aria-label="Buscar actividad">
+            </div>
+            
+            <button class="export-btn" id="exportExcel">
+                <svg class="btn-icon" viewBox="0 0 24 24">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"/>
+                </svg>
+                Exportar
+            </button>
+        </div>
+
+        <div class="events-grid" id="eventsContainer">
+            <!-- Events will be loaded here dynamically -->
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- Asegúrate de tener solo UNA instancia de este script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
