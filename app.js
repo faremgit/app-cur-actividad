@@ -97,12 +97,12 @@ let allEvents = [];
 
 // Firebase Configuration (Replace with your own)
 const firebaseConfig = {
-    apiKey: "AIzaSyDY5dxIFUeoh_NECYuOTPareyHGYr9jzRY",
-    authDomain: "app-sierra-cur.firebaseapp.com",
-    projectId: "app-sierra-cur",
-    storageBucket: "app-sierra-cur.firebasestorage.app",
-    messagingSenderId: "18478722749",
-    appId: "1:18478722749:web:15de8ebce2411ce993d1d4"
+    apiKey: "AIzaSyDAsM3rpnG4Duqw-vOREhOOOWeH-7fSD-0",
+    authDomain: "my-events-cur.firebaseapp.com",
+    projectId: "my-events-cur",
+    storageBucket: "my-events-cur.firebasestorage.app",
+    messagingSenderId: "956882017525",
+    appId: "1:956882017525:web:45ba422323eb7dcede79bc"
   };
 
 /// Inicializar Firebase
